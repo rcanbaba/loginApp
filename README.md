@@ -1,4 +1,4 @@
-# photoApp
+## photoApp
 
-## Firebase Auth
-## Firebase Strorage
+#### Firebase Auth
+#### Firebase Strorage
