@@ -28,15 +28,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-gt-cZT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-gt-cZT">
                                 <rect key="frame" x="35" y="347" width="339" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-2J-oqq">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-2J-oqq">
                                 <rect key="frame" x="35" y="454" width="339" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l24-5T-6Zv">
                                 <rect key="frame" x="35" y="568" width="149.5" height="40"/>
@@ -110,7 +110,7 @@
         <!--Settings-->
         <scene sceneID="U8M-sW-ORG">
             <objects>
-                <viewController id="vZf-Ah-h1R" sceneMemberID="viewController">
+                <viewController id="vZf-Ah-h1R" customClass="SettingsViewController" customModule="loginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4Y-6x-upp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logoutButtonTapped:" destination="lSD-Lf-jkB" eventType="touchUpInside" id="mTJ-rY-SZg"/>
+                                    <action selector="logoutButtonTapped:" destination="vZf-Ah-h1R" eventType="touchUpInside" id="WAb-7X-QjP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -139,7 +139,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cee-lc-lX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="lSD-Lf-jkB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2029" y="460"/>
         </scene>
@@ -174,7 +173,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="7F9-gZ-nZ4">
             <objects>
-                <tabBarController id="VFU-bK-Xit" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="VFU-bK-Xit" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Czb-ap-wIc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cI8-dP-XCT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

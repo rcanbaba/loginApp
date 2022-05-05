@@ -20,6 +20,18 @@ class ViewController: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         
+        if emailTextField.text != nil  && passwordTextField.text != nil {
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { response, error in
+                if let error = error {
+                    self.showAlert(title: "Login Error", message: error.localizedDescription)
+                } else {
+                    
+                    self.performSegue(withIdentifier: "toMainVC", sender: nil)
+                }
+            }
+            
+            
+        }
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
@@ -27,17 +39,13 @@ class ViewController: UIViewController {
         if emailTextField.text != nil {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { response, error in
                 if let error = error {
-                    self.showAlert(title: "Error", message: error.localizedDescription)
+                    self.showAlert(title: "Register Error", message: error.localizedDescription)
                 } else {
                     
                     self.performSegue(withIdentifier: "toMainVC", sender: nil)
                 }
-                
-                
-                
             }
         }
-        
     }
     
     func showAlert(title: String, message: String){
